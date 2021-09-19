@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse</title>
+
+    <link rel="stylesheet" href="browseStyle.css">
+
+    <script type= "text/javascript">
+
+        var floraImages = []
+        floraImages[0] = "floral/Peony1-9x9.jpg";
+        floraImages[1] = "floral/BirdOfParadise-9x9.jpg";
+        floraImages[2] = "floral/cactus flower-9x9.jpg";
+        floraImages[3] = "floral/calla lilies-14x11.jpg";
+	floraImages[4] = "floral/floralheart-9x9.jpg";
+	floraImages[5] = "floral/hellebore-12x12.jpg";
+	floraImages[6] = "floral/lotus-14x11.jpg";
+	floraImages[7] = "floral/penoy-14x11.jpg";
+	floraImages[8] = "floral/poppies-12x12.jpg";
+	floraImages[9] = "floral/tulip_9x9.jpg";
+	floraImages[10] = "floral/yucca-9x9.jpg";
+    
+        function hoverFlora(element) {
+            var randomFlora = floraImages[Math.floor(Math.random() * floraImages.length)]
+            element.setAttribute('src', randomFlora);
+        }
+
+        function unhoverFlora(element){
+            element.setAttribute('src', "browseIcons/floraArt.png")
+        }
+
+        var birdImages = []
+	birdImages[0] = "bird/Bee-eater-14x11.jpg";
+        birdImages[1] = "bird/Great Blue Heron-12x12.jpg";
+        birdImages[2] = "bird/hummingbird-9x9.jpg";
+        birdImages[3] = "bird/kingfisher-9x9.jpg";
+	birdImages[4] = "bird/Lilac-Breasted Rollers-14x11.jpg";
+	birdImages[5] = "bird/Sunbird-14x11.jpg";
+        
+        function hoverBird(element) {
+            var randomBird = birdImages[Math.floor(Math.random() * birdImages.length)]
+            element.setAttribute('src', randomBird);
+        }
+
+        function unhoverBird(element){
+            element.setAttribute('src', "browseIcons/birdArt.png")
+        }
+
+        var fishImages = []
+        fishImages[0] = "fish/3-betta fish-14x11.jpg";
+        fishImages[1] = "fish/bass-9x9.jpg";
+        fishImages[2] = "fish/betta fish-9x9-v2.jpg";
+        fishImages[3] = "fish/bettafish1-9x9.jpg";
+	fishImages[4] = "fish/Goldfish-9x9.jpg";
+	fishImages[5] = "fish/orangebettafish-14x11.jpg";
+
+        function hoverFish(element) {
+            var randomFish = fishImages[Math.floor(Math.random() * fishImages.length)]
+            element.setAttribute('src', randomFish);
+        }
+
+        function unhoverFish(element){
+            element.setAttribute('src', "browseIcons/fishArt.png")
+        }
+
+        var otherImages = []
+        otherImages[0] = "other/letters-4incheshigh.jpg";
+
+        function hoverOther(element) {
+            var randomOther = otherImages[Math.floor(Math.random() * otherImages.length)]
+            element.setAttribute('src', randomOther);
+        }
+
+        function unhoverOther(element){
+            element.setAttribute('src', "browseIcons/otherArt.png")
+        }
+
+    </script>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            <div id="logo">
+                <h1 class="logo">
+                    <a href="home.html">
+                        <img id= "logoImage" src="homePics/logo.png" alt="GTLand A Paper Quilling Art Shop">
+                    </a>
+                </h1>
+            </div>
+        </div>
+
+        <div id="topNav">
+            <nav class="navBar">
+                <div class="navWrapper">
+                    <ul class="navLinks">
+                        <li class="home">
+                            <a href="home.html">
+                                <span id="home">Home</span>
+                            </a>
+                        </li>
+                        <li class="browseLinks">
+                            <div class="browseDropdownParent">
+                                <a aria-haspopup="true" href="browse.html">
+                                    <span id="browse">Browse</span>
+                                </a>
+                            </div>
+                            <div class="browseDropdownChild">
+                                <ul class="dropdownChildren">
+                                    <li class="artLink">
+                                        <a href="floraArt.html" title="floraArt">
+                                            <span>Flora Art</span>
+                                        </a>
+                                    </li>
+                                    <li class="artLink">
+                                        <a href="birdArt.html" title="birdArt">
+                                            <span>Bird Art</span>
+                                        </a>
+                                    </li>
+                                    <li class="artLink">
+                                        <a href="fishArt.html" title="fishArt">
+                                            <span>Fish Art</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="otherArt.html" title="otherArt">
+                                            <span>Other Art</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="about">
+                            <a href="about.html">
+                                <span id="about">About</span>
+                            </a>
+                        </li>
+                        <li class="contact">
+                            <a href="contact.html">
+                                <span id="contact">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="floraBird">
+            <div class="flora">
+                <a href="floraArt.html">
+                    <img id="flora" src="browseIcons/floraArt.png" alt="Flora Art" onmouseover="hoverFlora(this);" onmouseout="unhoverFlora(this);" />
+                </a>
+            </div>
+            <div class="bird">
+                <a href="birdArt.html">
+                    <img id="bird" src="browseIcons/birdArt.png" alt="Bird Art" onmouseover="hoverBird(this);" onmouseout="unhoverBird(this);" />
+                </a>
+            </div>
+        </div>
+        <div class="fishOther">
+            <div class="fish">
+                <a href="fishArt.html">
+                    <img src="browseIcons/fishArt.png" alt="Fish Art" onmouseover="hoverFish(this);" onmouseout="unhoverFish(this);" />
+                </a>
+            </div>
+            <div class="other">
+                <a href="otherArt.html">
+                    <img src="browseIcons/otherArt.png" alt="Other Art" onmouseover="hoverOther(this);" onmouseout="unhoverOther(this);" />>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

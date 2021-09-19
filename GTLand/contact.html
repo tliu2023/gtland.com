@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flora Art</title>
+
+    <link rel="stylesheet" href="contactStyle.css">
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script type="text/javascript">
+
+
+        window.onload = function () {
+            var form = document.getElementById('contact-form');
+            form.addEventListener("submit", function (event) {
+                if (grecaptcha.getResponse() === '') {
+                    event.preventDefault();
+                    alert('Please check the recaptcha');
+                }
+            }
+                , false);
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <div id="logo">
+                <h1 class="logo">
+                    <a href="home.html">
+                        <img id="logoImage" src="homePics/logo.png" alt="GTLand A Paper Quilling Art Shop">
+                    </a>
+                </h1>
+            </div>
+        </div>
+
+        <div id="topNav">
+            <nav class="navBar">
+                <div class="navWrapper">
+                    <ul class="navLinks">
+                        <li class="home">
+                            <a href="home.html">
+                                <span id="home">Home</span>
+                            </a>
+                        </li>
+                        <li class="browseLinks">
+                            <div class="browseDropdownParent">
+                                <a aria-haspopup="true" href="browse.html">
+                                    <span id="browse">Browse</span>
+                                </a>
+                            </div>
+                            <div class="browseDropdownChild">
+                                <ul class="dropdownChildren">
+                                    <li class="artLink">
+                                        <a href="floraArt.html" title="floraArt">
+                                            <span>Flora Art</span>
+                                        </a>
+                                    </li>
+                                    <li class="artLink">
+                                        <a href="birdArt.html" title="birdArt">
+                                            <span>Bird Art</span>
+                                        </a>
+                                    </li>
+                                    <li class="artLink">
+                                        <a href="fishArt.html" title="fishArt">
+                                            <span>Fish Art</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="otherArt.html" title="otherArt">
+                                            <span>Other Art</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="about">
+                            <a href="about.html">
+                                <span id="about">About</span>
+                            </a>
+                        </li>
+                        <li class="contact">
+                            <a href="contact.html">
+                                <span id="contact">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="contactDescription">
+            <p>
+                Interested in a personalized commission or want to leave a message? Fill out the form below!
+            </p>
+            <p>
+                * indicates required field.
+            </p>
+        </div>
+        <div class="contactFormContainer">
+            <form id="contact-form" method="post" action="contact.php">
+                <p>Name *</p>
+                <input name="name" type="text" class="form-control" placeholder="" required>
+                <p>Email *</p>
+                <input name="email" type="email" class="form-control" placeholder="" required>
+                <p>Message *</p>
+                <textarea name="message" class="form-control" placeholder="" id="" cols="60" rows=10"
+                    required></textarea>
+                <!-- <div id="recaptchaDescription">
+                    <p>Please check the reCAPTCHA</p>
+                </div> -->
+                <div class="g-recaptcha" data-sitekey="6Lf56rMbAAAAAF_WyuhMSTRjewjDuEtvCl6Ij-7l"></div>
+                <button id="submitButton" type="submit" class="form-control" value="Send Message">Send
+                    Message</button>
+
+            </form>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

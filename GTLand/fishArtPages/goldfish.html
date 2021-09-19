@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>fishOfParadise</title>
+
+    <link rel="stylesheet" href="../itemStyle.css">
+
+    <script type="text/javascript">
+
+        function displayNextImage() {
+            x = (x === images.length - 1) ? 0 : x + 1;
+            document.getElementById("mainPic").src = images[x];
+        }
+
+        function displayPreviousImage() {
+            x = (x <= 0) ? images.length - 1 : x - 1;
+            document.getElementById("mainPic").src = images[x];
+        }
+
+        var images = [], x = 0;
+        images[0] = "../fish/Goldfish-9x9.jpg";
+        images[1] = "../fishArtPages/goldfishPics/pic1.jpg";
+        images[2] = "../fishArtPages/goldfishPics/pic2.jpg";
+        images[3] = "../fishArtPages/goldfishPics/pic3.jpg";
+        images[4] = "../fishArtPages/goldfishPics/pic4.jpg";
+
+
+        function showPicture(picNum) {
+            document.getElementById("mainPic").src = images[picNum];
+            x = picNum;
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <div id="logo">
+                <h1 class="logo">
+                    <a href="../home.html">
+                        <img id="logoImage" src="../homePics/logo.png" alt="GTLand A Paper Quilling Art Shop">
+                    </a>
+                </h1>
+            </div>
+        </div>
+
+        <div id="topNav">
+            <nav class="navBar">
+                <div class="navWrapper">
+                    <ul class="navLinks">
+                        <li class="home">
+                            <a href="../home.html">
+                                <span id="home">Home</span>
+                            </a>
+                        </li>
+                        <li class="browseLinks">
+                            <div class="browseDropdownParent">
+                                <a aria-haspopup="true" href="../browse.html">
+                                    <span id="browse">Browse</span>
+                                </a>
+                            </div>
+                            <div class="browseDropdownChild">
+                                <ul class="dropdownChildren">
+                                    <li class="artLink">
+                                        <a href="../floraArt.html" title="floraArt">
+                                            <span>Flora Art</span>
+                                        </a>
+                                    </li>
+                                    <li class="artLink">
+                                        <a href="../fishArt.html" title="fishArt">
+                                            <span>fish Art</span>
+                                        </a>
+                                    </li>
+                                    <li class="artLink">
+                                        <a href="../fishArt.html" title="fishArt">
+                                            <span>Fish Art</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="../otherArt.html" title="otherArt">
+                                            <span>Other Art</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="about">
+                            <a href="../about.html">
+                                <span id="about">About</span>
+                            </a>
+                        </li>
+                        <li class="contact">
+                            <a href="../contact.html">
+                                <span id="contact">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="description">
+            <p id="description">
+               These two beautiful goldfish were made using quilling techniques. Swimming in a circle, in the shape of a yin yang symbol. Uniquely designed & 100% handmade. Framed with covered glass - measuring by 9” x 9” x 1 3/4". A perfect wall/desk décor for your home.
+                
+            </p>
+
+            <p id="handmade">
+                100% handmade
+            </p>
+            <p id="dimensions">
+                Frame size: width 9", height 9", depth 1 3/4"
+            </p>
+            <p id="materials">
+                Materials: 5mm paper strips, cardboard, white glue
+            </p>
+	        <p id="price">
+                <font size="+1"><b>$135.00<b></font>
+            </p>
+	        <p id="shipping">
+                Free domestic shipping
+            </p>
+            <div class="cart">
+                <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="3UKFA8G2GZ54E">
+                    <table>
+                        <tr>
+                            <td><input type="hidden" name="on0" value="Frame Color">Frame Color</td>
+                        </tr>
+                        <tr>
+                            <td><select name="os0">
+                                    <option value="" selected>Select an option</option>
+                                    <option value="black">Black</option>
+                                    <option value="gray">Gray</option>
+                                    <option value="white">White</option>
+                                </select> </td>
+                        </tr>
+                    </table>
+                    <button type="submit">
+                        <div> Add to Cart</div>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="pictures">
+            <div class="mainPicArea">
+                <img class="arrows" src="../homePics/leftArrow.png" alt="leftArrow" onclick="displayPreviousImage()">
+                <img id="mainPic" src="../fish/Goldfish-9x9.jpg" alt="goldfish">
+                <img class="arrows" src="../homePics/rightArrow.png" alt="rightArrow" onclick="displayNextImage()">
+            </div>
+            <div class="additionalPics">
+                <img src="../fish/Goldfish-9x9.jpg" alt="goldfish" onclick="showPicture(0)">
+                <img src="../fishArtPages/goldfishPics/pic1.jpg" alt="pic1" onclick="showPicture(1)">
+                <img src="../fishArtPages/goldfishPics/pic2.jpg" alt="pic2" onclick="showPicture(2)">
+                <img src="../fishArtPages/goldfishPics/pic3.jpg" alt="pic3" onclick="showPicture(3)">
+                <img src="../fishArtPages/goldfishPics/pic4.jpg" alt="pic4" onclick="showPicture(4)">
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <div class="mySlides">
+                <img src="../fish/Goldfish-9x9.jpg" alt="goldfish">
+            </div>
+
+            <div class="mySlides">
+                <img src="../fishArtPages/goldfishPics/pic1.jpg"
+                    alt="pic1">
+            </div>
+
+            <div class="mySlides">
+                <img src="../fishArtPages/goldfishPics/pic2.jpg"
+                    alt="pic2">
+            </div>
+
+            <div class="mySlides">
+                <img src="../fishArtPages/goldfishPics/pic3.jpg"
+                    alt="pic3">
+            </div>
+
+            <div class="mySlides">
+                <img src="../fishArtPages/goldfishPics/pic4.jpg"
+                    alt="pic4">
+            </div> -->
+
+    <!-- Next/previous controls -->
+    <!-- <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
+
+    <!-- Caption text -->
+    <!-- <div class="caption-container">
+        <p id="caption"></p>
+    </div> -->
+
+    <!-- Thumbnail image controls -->
+    <!-- <div class="column">
+        <img class="demo" fish/Goldfish-9x9.jpg"
+            alt="goldfish" onclick="currentSlide(1)">
+    </div>
+
+    <div class="column">
+        <img class="demo" src="https:fishArtPages/goldfishPics/pic1.jpg"
+            alt="pic1" onclick="currentSlide(2)">
+    </div>
+
+    <div class="column">
+        <img class="demo" src="https:fishArtPages/goldfishPics/pic2.jpg"
+            alt="pic2" onclick="currentSlide(3)">
+    </div>
+
+    <div class="column">
+        <img class="demo" src="https:fishArtPages/goldfishPics/pic3.jpg"
+            alt="pic3" onclick="currentSlide(4)">
+    </div>
+    <div class="column">
+        <img class="demo" src="https:fishArtPages/goldfishPics/pic4.jpg"
+            alt="pic4" onclick="currentSlide(4)">
+    </div>
+    </div>
+    </div> -->
+
+
+    <div class="contactContainer">
+
+    </div>
+    
+</body>
+
+</html>

@@ -1,0 +1,312 @@
+/*#region navigation*/
+div {
+    display: block;
+}
+
+body {
+    color: #666;
+    background-color: #fbfbfb;
+    font-family: Open Sans;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 1.6em;
+    letter-spacing: .5px;
+}
+
+.wrapper {
+    opacity: 1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#logo {
+    text-align: center;
+    flex: 0 0 100%;
+}
+
+#logo #logoImage {
+    max-width: 100%;
+    max-height: auto;
+    border: 0;
+    vertical-align: middle;
+}
+
+h1,
+h2 {
+    color: #666;
+    font-family: Roboto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 0em;
+    /* makes it closer h1, h2 */
+    text-transform: uppercase;
+    letter-spacing: 0px;
+}
+
+h1 {
+    font-size: 6.6em;
+    display: block;
+    margin: 0px;
+}
+
+h2 {
+    font-size: 1.1em;
+    display: block;
+    margin: 0px;
+}
+
+#topNav {
+    display: table;
+    vertical-align: top;
+    text-align: center;
+    opacity: 1;
+    transition: opacity 0.3s ease 0s;
+    width: 100%;
+}
+
+#topNav .navBar {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#topNav .navBar ul {
+    display: inline-block;
+    margin: -.35em 0 0 0;
+    font-size: 14px;
+}
+
+nav ul,
+nav ol {
+    list-style: none;
+    list-style-image: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+#topNav .navBar ul li {
+    margin-left: 20px;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+#topNav .browseLinks {
+    box-sizing: border-box;
+    position: relative;
+    cursor: pointer;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+#topNav .browseLinks span {
+    border-bottom-color: transparent;
+}
+
+#topNav .browseLinks .browseDropdownChild {
+    position: absolute;
+    left: 50%;
+    margin-left: -70px;
+    /* decides how close the drop down is */
+    z-index: 1100;
+    padding-top: 18px;
+}
+
+#topNav .browseLinks .browseDropdownChild ul.dropdownChildren {
+    display: none;
+    padding: 15px 20px;
+    margin: 0;
+    position: relative;
+}
+
+#topNav .browseLinks:hover ul.dropdownChildren,
+#topNav .browseLinks .browseDropdownChild:hover ul.dropdownChildren,
+#topNav .browseLinks:active ul.dropdownChildren,
+#topNav .browseLinks .browseDropdownChild:active ul.dropdownChildren {
+    display: block;
+}
+
+#topNav .browseLinks ul.dropdownChildren {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+#topNav .browseLinks ul.dropdownChildren {
+    color: #fbfbfb;
+}
+
+#topNav .browseLinks ul.dropdownChildren li {
+    text-align: left;
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#topNav .browseLinks .browseDropdownChild ul.dropdownChildren:before {
+    color: rgba(0, 0, 0, .5);
+}
+
+#topNav .browseLinks .browseDropdownChild ul.dropdownChildren:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 0 0 10px;
+    border-style: solid;
+    border-right: solid 10px transparent;
+    border-left: solid 10px transparent;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    margin-left: -10px;
+}
+
+#topNav .browseLinks .browseDropdownChild ul.dropdownChildren li a {
+    color: #fff;
+}
+
+#topNav .browseLinks .browseDropdownChild ul.dropdownChildren li a {
+    display: block;
+    font-size: 13px;
+    padding: 5px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+}
+
+#topNav .browseLinks .browseDropdownChild ul.dropdownChildren li a span,
+#topNav .browseLinks .browseDropdownChild ul.dropdownChildren li:hover span {
+    border-color: transparent;
+}
+
+#topNav #browse {
+    font-weight: bold;
+    color: lightskyblue;
+}
+
+/* #endregion */
+
+.container .pictures .mainPicArea{
+    display: flex;
+    align-items: center;
+}
+
+.container .pictures img#mainPic {
+    width: 500px;
+    height: auto;
+}
+@media only screen and (max-width: 600px) {
+    body {
+        color: black;
+    }
+    .container .pictures img#mainPic {
+        width: 300px;
+        height: auto;
+    }
+}
+
+.container .pictures img.arrows{
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+
+.container .pictures .additionalPics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-left: 36px;
+    margin-right: 36px;
+    cursor: pointer;
+}
+
+.container .pictures .additionalPics img {
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.container .description {
+    width: 500px;
+}
+
+.container .description .cart p {
+    margin-bottom: 0px;
+}
+
+
+.container .description .cart table {
+    width: 100%;
+}
+
+.container .description .cart select {
+    transition: border-color 200ms ease-out, box-shadow 200ms ease-out;
+    appearance: none;
+    display: block;
+    font-family: inherit;
+    height: 48px;
+    padding-left: 12px;
+    padding-right: 36px;
+    width: 100%;
+    border-radius: 6px;
+    border-color: rgba(34, 34, 34, 0.15);
+    border-style: solid;
+    border-width: 1px;
+    text-indent: 0.01px;
+    cursor: pointer;
+}
+
+.container .description .cart button {
+    background: #222;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 24px;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    min-height: 48px;
+    min-width: 48px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 10;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.container .description .cart button:hover {
+    transform: scale(1.005);
+    background: #2f2f2f;
+}
+
+.container .description .cart div {
+    color: white;
+}

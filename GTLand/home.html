@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+
+    <link rel="stylesheet" href="homeStyle.css">
+
+    <script type="text/javascript">
+        function displayNextImage() {
+            x = (x === images.length - 1) ? 0 : x + 1;
+            document.getElementById("homeImage").src = images[x];
+            clearInterval(imageInterval);
+            if (!isRunning) {
+                setTimeout(startTimer, 1000)
+                isRunning = true;
+            }
+
+            document.getElementById(currentButton.toString()).style.background = "#808080";
+            currentButton = (currentButton === images.length - 1) ? 0 : currentButton + 1;
+            document.getElementById(currentButton.toString()).style.background = "#87cefa";
+
+        }
+
+        function displayPreviousImage() {
+            x = (x <= 0) ? images.length - 1 : x - 1;
+            document.getElementById("homeImage").src = images[x];
+            
+            clearInterval(imageInterval);
+            if (!isRunning) {
+                setTimeout(startTimer, 1000)
+                isRunning = true;
+            }
+
+            document.getElementById(currentButton.toString()).style.background = "#808080";
+            currentButton = (currentButton <= 0) ? images.length - 1 : currentButton - 1;
+            document.getElementById(currentButton.toString()).style.background = "#87cefa";
+        }
+
+        var images = [], x = 0;
+        images[0] = "homePics/Peony1-9x9.jpg";
+        images[1] = "homePics/bass-9x9.jpg";
+        images[2] = "homePics/Great Blue Heron-12x12.jpg";
+        images[3] = "homePics/Goldfish-9x9.jpg";
+        images[4] = "homePics/hummingbird-9x9.jpg";
+        images[5] = "homePics/betta fish-9x9-v2.jpg";
+        images[6] = "homePics/poppies-12x12.jpg";
+
+        var isRunning = false;
+
+        var imageInterval;
+        
+        var currentButton = 0;
+
+        function startTimer() {
+            imageInterval = setInterval(displayNextImage, 1000);
+            isRunning = false;
+        }
+
+        function showPicture(picNum) {
+            document.getElementById("homeImage").src = images[picNum];
+            document.getElementById(currentButton.toString()).style.background = "#808080";
+            currentButton = picNum
+            document.getElementById(picNum.toString()).style.background = "#87cefa";
+            x = picNum;
+            clearInterval(imageInterval);
+            if (!isRunning) {
+                setTimeout(startTimer, 5000)
+                isRunning = true;
+            }
+        }
+        
+    </script>
+</head>
+
+<body onload="startTimer()">
+    <header>
+        <div class="wrapper">
+            <div id="logo">
+                <h1 class="logo">
+                    <a href="home.html">
+                        <img id="logoImage" src="homePics/logo.png" alt="GTLand A Paper Quilling Art Shop">
+                    </a>
+                </h1>
+            </div>
+        </div>
+
+        <div id="topNav">
+            <nav class="navBar">
+                <div class="navWrapper">
+                    <ul class="navLinks">
+                        <li class="home">
+                            <a href="home.html">
+                                <span id="home">Home</span>
+                            </a>
+                        </li>
+                        <li class="browseLinks">
+                            <div class="browseDropdownParent">
+                                <a aria-haspopup="true" href="browse.html">
+                                    <span id="browse">Browse</span>
+                                </a>
+                            </div>
+                            <div class="browseDropdownChild">
+                                <ul class="dropdownChildren">
+                                    <li class="artLink">
+                                        <a href="floraArt.html" title="floraArt">
+                                            <span>Flora Art</span>
+                                        </a>
+                                    </li>
+                                    <li class="artLink">
+                                        <a href="birdArt.html" title="birdArt">
+                                            <span>Bird Art</span>
+                                        </a>
+                                    </li>
+                                    <li class="artLink">
+                                        <a href="fishArt.html" title="fishArt">
+                                            <span>Fish Art</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="otherArt.html" title="otherArt">
+                                            <span>Other Art</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="about">
+                            <a href="about.html">
+                                <span id="about">About</span>
+                            </a>
+                        </li>
+                        <li class="contact">
+                            <a href="contact.html">
+                                <span id="contact">Contact</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="imageContainer">
+            <img id="homeImage" src="homePics/Peony1-9x9.jpg" alt="Quilling picture 1">
+        </div>
+        <div class="toolbarContainer">
+            <div="toolbar">
+                <ul role="toolbar" id="toolbar">
+                    <li>
+                        <button class="button0" id="0" onclick="showPicture(0)"></button>
+                    </li>
+                    <li>
+                        <button id="1" onclick="showPicture(1)"></button>
+                    </li>
+                    <li>
+                        <button id="2" onclick="showPicture(2)"></button>
+                    </li>
+                    <li>
+                        <button id="3" onclick="showPicture(3)"></button>
+                    </li>
+                    <li>
+                        <button id="4" onclick="showPicture(4)"></button>
+                    </li>
+                    <li>
+                        <button id="5" onclick="showPicture(5)"></button>
+                    </li>
+                    <li>
+                        <button id="6" onclick="showPicture(6)"></button>
+                    </li>
+                </ul>
+        </div>
+    </div>
+
+    </div>
+
+</body>
+
+</html>
